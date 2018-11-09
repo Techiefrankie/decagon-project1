@@ -1,9 +1,9 @@
 {
 "users": [
-  { "id": 1, "name": "Ogbonna Franklyn", "email": "ogbonna403@gmail.com" ,"password": "techie"}
+  { "id": 1, "name": "Ogbonna Franklyn", "email": "ogbonna403@gmail.com" ,"password": "frank"}
 ],
 "Houses": [
-  { "id": 1, "body": "some comment", "postId": 1 }
+  { "id": 1, "title": "4 Bedroom Flat", "location": "Lekki","" }
 ],
 "profile": { "name": "typicode" }
 }

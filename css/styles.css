@@ -28,3 +28,7 @@ footer{
     background-color: dodgerblue;
     color: #ffffff;
 }
+
+#error{
+    color: red;
+}

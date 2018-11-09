@@ -1,0 +1,24 @@
+.bg-danger, .bg-success {
+	padding: 0 5px;
+}
+
+a {
+	color: #EF1F2F;
+	text-decoration: none;
+}
+
+h2.heading{
+	text-align: center;
+	color: #0573b7
+}
+
+body{
+	/*background: rgba(236, 236,236,236);*/
+}
+
+.lab{
+	color: #0573b7
+}
+
+
+
