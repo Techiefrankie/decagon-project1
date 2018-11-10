@@ -1,9 +1,82 @@
 {
-"users": [
-  { "id": 1, "name": "Ogbonna Franklyn", "email": "ogbonna403@gmail.com" ,"password": "frank"}
-],
-"Houses": [
-  { "id": 1, "title": "4 Bedroom Flat", "location": "Lekki","" }
-],
-"profile": { "name": "typicode" }
+  "users": [
+    {
+      "name": "Ogbonna Franklyn",
+      "email": "ogbonna403@gmail.com",
+      "password": "frank"
+    },
+    {
+      "name": "Franklyn Nnanna Ogbonna",
+      "email": "techiefrankie@gmail.com",
+      "password": "nnanna"
+    },
+    {
+      "id": "3",
+      "name": "gggg",
+      "email": "ffff",
+      "password": "102279"
+    },
+    {
+      "id": "0",
+      "name": "ghhh",
+      "email": "ffff",
+      "password": "106251"
+    },
+    {
+      "id": "32",
+      "name": "ggggh",
+      "email": "gggg",
+      "password": "3324672"
+    },
+    {
+      "id": "53",
+      "name": "Franklyn Nnanna Ogbonna",
+      "email": "techiefrankie@gmail.com",
+      "password": "102110635"
+    },
+    {
+      "id": "84",
+      "name": "w",
+      "email": "ogbonna403@gmail.com",
+      "password": "0"
+    },
+    {
+      "id": "38",
+      "name": "Ogbonna Franklyn",
+      "email": "hello@classworsk.xyz",
+      "password": "0"
+    },
+    {
+      "id": "69",
+      "name": "Ogbonna Franklyn",
+      "email": "hello@classworsk.xyz",
+      "password": "0"
+    },
+    {
+      "id": "59",
+      "name": "Funmie Frankie",
+      "email": "funpet@gmail.com",
+      "password": "-1263416237"
+    },
+    {
+      "id": "26",
+      "name": "Obot Kingsley",
+      "email": "kng@gmail.com",
+      "password": "-710588613"
+    }
+  ],
+  "houses": [
+    {
+      "id": 1,
+      "title": "4 Bedroom Flat",
+      "location": "Lekki",
+      "owner": "Ogbonna Franklyn",
+      "price": 5000000,
+      "image": "images/img1.jpg",
+      "user_id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

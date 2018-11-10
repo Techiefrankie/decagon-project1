@@ -19,11 +19,6 @@ footer{
     color: #ffffff;
 }
 
-#brand-name{
-    color: maroon;
-    margin-left: 5px;
-}
-
 .menu-item:hover{
     background-color: dodgerblue;
     color: #ffffff;
@@ -31,4 +26,14 @@ footer{
 
 #error{
     color: red;
+}
+
+.img-title{
+    margin-top: 5px;
+}
+.brand{
+    color: maroon;
+    font-family: "Bernard MT Condensed";
+    font-size: large;
+    text-decoration: none;
 }
