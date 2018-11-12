@@ -1,5 +1,6 @@
 body{
     background-color: #D0D7E3;
+    font-size: 15px;
 }
 .list-img{
     width: 200px;
@@ -26,6 +27,7 @@ footer{
 
 #error{
     color: red;
+    font-size: larger;
 }
 
 .img-title{
@@ -36,4 +38,18 @@ footer{
     font-family: "Bernard MT Condensed";
     font-size: large;
     text-decoration: none;
+}
+.add-section{
+    background-color: #ffffff;
+    padding: 20px 10px 20px 10px;
+    border-radius: 10px;
+}
+.each-list{
+    background-color: white;
+    width: 450px;
+    padding: 10px 0px 0px 25px;
+}
+.view-btn{
+    text-decoration: none;
+    color: #ffffff;
 }

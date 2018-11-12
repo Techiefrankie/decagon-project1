@@ -63,17 +63,52 @@
       "name": "Obot Kingsley",
       "email": "kng@gmail.com",
       "password": "-710588613"
+    },
+    {
+      "id": "20",
+      "name": "frtyu",
+      "email": "kkjhh",
+      "password": "hgggg"
+    },
+    {
+      "id": "43",
+      "name": "nnanna",
+      "email": "email",
+      "password": "password"
     }
   ],
   "houses": [
     {
-      "id": 1,
-      "title": "4 Bedroom Flat",
-      "location": "Lekki",
-      "owner": "Ogbonna Franklyn",
-      "price": 5000000,
-      "image": "images/img1.jpg",
-      "user_id": 1
+      "id": "73",
+      "title": "6 Bedroom Flat",
+      "owner": "Chinda",
+      "location": "Aggip - Rivers",
+      "price": "4500000",
+      "image": "images/img12.jpg"
+    },
+    {
+      "id": "69",
+      "title": "2 Bedroom Flat",
+      "owner": "Gomba",
+      "location": "Aleto - Eleme",
+      "price": "200000",
+      "image": "images/img2.jpg"
+    },
+    {
+      "id": "77",
+      "title": "Self Contain",
+      "owner": "Baridule Martins",
+      "location": "Woji - Rivers",
+      "price": "120000",
+      "image": "images/img7.jpg"
+    },
+    {
+      "id": "37",
+      "title": "eee",
+      "location": "ee hjjk",
+      "owner": "ee",
+      "price": "4445",
+      "image": "images/img11.jpg"
     }
   ],
   "profile": {

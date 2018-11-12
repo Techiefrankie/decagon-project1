@@ -1,30 +1,48 @@
 $(document).ready(function () {
 
+    //login module
     $('#login').click(function () {
         let email = $('#email').val();
         let password = $('#password').val();
         if ( email === ''  || password == ''){
             document.getElementById("error").innerHTML = "Please enter username and password";
         }
+        else if (!emailCheck(email)) {
+            document.getElementById("error").innerHTML = "Invalid E-mail ID";
+        }
         else{
             document.getElementById("error").innerHTML = "";
             let query = " http://localhost:3000/users?email="+email+"&password="+hashCode(password);
-            $.get(query, function( data ) {
-                if (data.length > 0){
-                    document.cookie = "email="+email;
-                    document.location.href = "dashboard1.html";
+            // $.get(query, function( data ) {
+            //     if (data.length > 0){
+            //         document.cookie = "email="+email;
+            //         document.location.href = "dashboard1.html";
+            //     }
+            //     else{
+            //         document.getElementById("error").innerHTML = "Username or password incorrect";
+            //     }
+            // }, "json" );
+
+
+            $.ajax({
+                url: query,
+                success: function (data) {
+                    if (data.length > 0){
+                        document.cookie = "email=" + email;
+                        document.location.href = "dashboard.html";
+                    }
+                    else{
+                        document.getElementById("error").innerHTML = "Username or password incorrect";
+                    }
+                },
+                error: function () {
+                    document.getElementById("error").innerHTML = "Error occured, please try again";
                 }
-                else{
-                    document.getElementById("error").innerHTML = "Username or password incorrect";
-                }
-            }, "json" );
+            });
         }
     });
 
-    $('.logout').click(function () {
-        document.location.href = "index.html";
-    });
-
+    //sign up module
     $('#signup').click(function () {
         let name = $('#name').val();
         let email = $('#email').val();
@@ -89,7 +107,93 @@ $(document).ready(function () {
         return h;
     }
 
+    //add house for listing section begins
+    $('#add-listing').click(function () {
+        let title = $('#title').val();
+        let location = $('#location').val();
+        let owner = $('#owner').val();
+        let price = $('#price').val();
+        if (title === ''){
+            $('#error').html('Please provide a title');
+        }
+        else if (location === ''){
+            $('#error').html('Where is this property located?');
+        }
+        else if (owner === ''){
+            $('#error').html('Who owns this property?');
+        }
+        else if (price == ''){
+            $('#error').html('Price cannot be empty');
+        }
+        else if (parseInt(price) % 1 !== 0){
+            $('#error').html('Price must be a number');
+        }
+        else{
+            $('#error').html('');
+            let id = Math.floor(Math.random() * 101)
+            //post data to json
+            let img = "images/img" +  Math.floor(Math.random() * 15) +".jpg";
+            let path = "http://localhost:3000/houses";
+            let house = {
+                    id : id,
+                    title : title,
+                    owner : owner,
+                    location : location,
+                    price : parseInt(price),
+                    image : img
+                };
+
+            $.ajax(
+                {
+                    url : path,
+                    method : 'post',
+                    data : house,
+                    success : function (response) {
+                        alert("House added successfully for listing");
+                        let display = "<p class=''><img src='" + img +"' height='200px' width='200px' alt='image'/></p>" +
+                            "<p class=''>" +title +
+                            "   <b>" + location + "</b> " +
+                            "   ₦" + price + "</p>";
+                        $('#list-display').append(display);
+                    },
+                    error: function () {
+                        $('#error').html('Error occured, please try again');
+                    }
+                }
+            );
+        }
+    });
+
+    //adding house for listing ends here
+
+    //full list starts here
+    $(function () {
+        $.ajax({
+            url: "http://localhost:3000/houses",
+            method: "get",
+            success: function (data) {
+                for (let i = 0; i < data.length; i++){
+                    let id = data[i].id;
+                    let url = "view-listing.html?id="+id;
+                    let display = "<div class='each-list'><p class=''><img src='" + data[i].image +"' height='300px' width='400px' alt='image'/></p>" +
+                        " <p class=''><span style='color: green;'>" + data[i].title +
+                        "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
+                        "<span style='color: maroon;'>₦" + data[i].price + "</span></p>" +
+                        "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view House</span></button> </a>" +
+                        "<br/></p>"
+                        "</div><br/><br/>";
+                    $('.full-list').append(display);
+                }
+            },
+            error: function () {
+                document.getElementById("error").innerHTML = "Error occured, please try again";
+            }
+        })
+    });
+    //full list ends here
+
 });
+
 
 function isValidEmail() {
     let email = $('#email').val();
@@ -179,3 +283,5 @@ function nameCheck() {
         $('#error').html('');
     }
 }
+
+
