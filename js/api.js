@@ -1,5 +1,31 @@
 $(document).ready(function () {
 
+    //list of property
+    $.ajax({
+        url: 'http://localhost:3000/houses',
+        success: function (data) {
+            for (let i = 0; i < 4; i++){
+                let title = data[i].title;
+                let location = data[i].location;
+                let price = data[i].price;
+                let img = data[i].image;
+                let display = `
+                    <div class='col-md-3' style="margin-bottom: 5px">
+                        <div class="listing-pane">
+                            <img src="${img}" class="list-img">
+                            <p>${title}</p>
+                            <p><label>${location}</label></p>
+                            <p><b>₦${numeral(price).format('0,0')}</b></p>
+                            <p><button type="button"  class="btn btn-warning" onclick="rentAlert();">Rent property</button> </p>
+                        </div>
+                    </div>
+                `;
+
+                $('#home-list').append(display);
+            }
+        },
+    });
+
     //login module
     $('#login').click(function () {
         let email = $('#email').val();
@@ -28,11 +54,16 @@ $(document).ready(function () {
                 url: query,
                 success: function (data) {
                     if (data.length > 0){
-                        document.cookie = "email=" + email;
-                        document.location.href = "dashboard.html";
+                        sessionStorage.setItem("email", email);
+                        document.location.href = 'dashboard.html';
                     }
                     else{
-                        document.getElementById("error").innerHTML = "Username or password incorrect";
+                        swal({
+                            title: "Oops!",
+                            text: "Username or password incorrect!",
+                            icon: "warning",
+                            button: "Try Again!",
+                        });
                     }
                 },
                 error: function () {
@@ -132,7 +163,7 @@ $(document).ready(function () {
             $('#error').html('');
             let id = Math.floor(Math.random() * 101)
             //post data to json
-            let img = "images/img" +  Math.floor(Math.random() * 15) +".jpg";
+            let img = "images/img" +  Math.floor(Math.random() * 21) +".jpg";
             let path = "http://localhost:3000/houses";
             let house = {
                     id : id,
@@ -143,24 +174,31 @@ $(document).ready(function () {
                     image : img
                 };
 
-            $.ajax(
-                {
-                    url : path,
-                    method : 'post',
-                    data : house,
-                    success : function (response) {
-                        alert("House added successfully for listing");
-                        let display = "<p class=''><img src='" + img +"' height='200px' width='200px' alt='image'/></p>" +
-                            "<p class=''>" +title +
-                            "   <b>" + location + "</b> " +
-                            "   ₦" + price + "</p>";
-                        $('#list-display').append(display);
-                    },
-                    error: function () {
-                        $('#error').html('Error occured, please try again');
-                    }
+            $.ajax({
+                url: path,
+                method: 'POST',
+                data: house,
+                success: function (response) {
+                    swal({
+                        title: "Success!",
+                        text: "Property added for listing successfully!",
+                        icon: "success",
+                        button: "Ok!",
+                    }).then((added) =>{
+                        if (added){
+                            let display = "<p class=''><img src='" + img +"' height='200px' width='200px' alt='image'/></p>" +
+                                "<p class=''>" +title +
+                                "   <b>" + location + "</b> " +
+                                "   ₦" + numeral(price).format('0,0') + "</p>";
+                            $('#list-display').append(display);
+                        }
+                    });
+
+                },
+                error: function (response) {
+                    alert(response)
                 }
-            );
+            });
         }
     });
 
@@ -175,11 +213,13 @@ $(document).ready(function () {
                 for (let i = 0; i < data.length; i++){
                     let id = data[i].id;
                     let url = "view-listing.html?id="+id;
+                    let rentUrl = "rent-property.html?id="+id;
                     let display = "<div class='each-list'><p class=''><img src='" + data[i].image +"' height='300px' width='400px' alt='image'/></p>" +
                         " <p class=''><span style='color: green;'>" + data[i].title +
                         "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
-                        "<span style='color: maroon;'>₦" + data[i].price + "</span></p>" +
-                        "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view House</span></button> </a>" +
+                        "<span style='color: maroon;'>₦" + numeral(data[i].price).format('0,0') + "</span></p>" +
+                        "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view Property</span></button> </a>" +
+                        "<a href='" + rentUrl + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-warning' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-book'> Rent Property</span></button> </a>"
                         "<br/></p>"
                         "</div><br/><br/>";
                     $('.full-list').append(display);
@@ -284,4 +324,12 @@ function nameCheck() {
     }
 }
 
+function rentAlert() {
+    swal({
+        title: "Just a step to go!",
+        text: "Please login or register to rent a property",
+        icon: "warning",
+        button: "Got It!",
+    });
+}
 

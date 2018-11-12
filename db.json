@@ -81,9 +81,9 @@
     {
       "id": "73",
       "title": "6 Bedroom Flat",
-      "owner": "Chinda",
       "location": "Aggip - Rivers",
-      "price": "4500000",
+      "owner": "Chinda",
+      "price": "4800000",
       "image": "images/img12.jpg"
     },
     {
@@ -103,12 +103,36 @@
       "image": "images/img7.jpg"
     },
     {
-      "id": "37",
-      "title": "eee",
-      "location": "ee hjjk",
-      "owner": "ee",
-      "price": "4445",
-      "image": "images/img11.jpg"
+      "id": "6",
+      "title": "gg",
+      "location": "gg",
+      "owner": "gg",
+      "price": "5525",
+      "image": "images/img4.jpg"
+    },
+    {
+      "id": "13",
+      "title": "ddd",
+      "owner": "ddd",
+      "location": "dddd",
+      "price": "344",
+      "image": "images/img3.jpg"
+    },
+    {
+      "id": "80",
+      "title": "aa",
+      "owner": "aa",
+      "location": "aa",
+      "price": "233",
+      "image": "images/img17.jpg"
+    },
+    {
+      "id": "78",
+      "title": "ddddd",
+      "owner": "ssddd",
+      "location": "sssss",
+      "price": "445555",
+      "image": "images/img2.jpg"
     }
   ],
   "profile": {
