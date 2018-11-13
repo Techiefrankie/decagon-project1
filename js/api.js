@@ -4,7 +4,8 @@ $(document).ready(function () {
     $.ajax({
         url: 'http://localhost:3000/houses',
         success: function (data) {
-            for (let i = 0; i < 4; i++){
+            let last = data.length - 1;
+            for (let i = last; i >= 0; i--){
                 let title = data[i].title;
                 let location = data[i].location;
                 let price = data[i].price;
@@ -214,14 +215,15 @@ $(document).ready(function () {
                     let id = data[i].id;
                     let url = "view-listing.html?id="+id;
                     let rentUrl = "rent-property.html?id="+id;
-                    let display = "<div class='each-list'><p class=''><img src='" + data[i].image +"' height='300px' width='400px' alt='image'/></p>" +
+                    let display = "<div class='col-md-4' style='margin: 20px'><div class='each-list'><p class=''><img src='" + data[i].image +"' height='250px' width='300px' alt='image'/></p>" +
                         " <p class=''><span style='color: green;'>" + data[i].title +
                         "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
                         "<span style='color: maroon;'>₦" + numeral(data[i].price).format('0,0') + "</span></p>" +
                         "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view Property</span></button> </a>" +
                         "<a href='" + rentUrl + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-warning' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-book'> Rent Property</span></button> </a>"
-                        "<br/></p>"
-                        "</div><br/><br/>";
+                        "<br/></p>"+
+                        "</div>";
+                        "</div<br/><br/>";
                     $('.full-list').append(display);
                 }
             },

@@ -9,7 +9,7 @@ $(document).ready(function () {
             success: function (data) {
                 for (let i = 0; i < data.length; i++){
                     let id = data[i].id;
-                    let display = `<div class='each-list'><p class=''><img src='${data[i].image}' height='300px' width='400px' alt='image'/></p>
+                    let display = `<div class='each-list'><p class=''><img src='${data[i].image}' height='250px' width='300px' alt='image'/></p>
                         <p class=''> ${data[i].title}<span class='location'> - Location: <b>  ${data[i].location} </span></b>
                          | ₦${numeral(data[i].price).format('0,0')} 
                         <p>Property Owner: ${data[i].owner}</p>

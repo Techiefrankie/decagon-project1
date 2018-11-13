@@ -75,6 +75,12 @@
       "name": "nnanna",
       "email": "email",
       "password": "password"
+    },
+    {
+      "id": "77",
+      "name": "Sir David",
+      "email": "david@gmail.com",
+      "password": "1854122814"
     }
   ],
   "houses": [
@@ -103,39 +109,57 @@
       "image": "images/img7.jpg"
     },
     {
-      "id": "6",
-      "title": "gg",
-      "location": "gg",
-      "owner": "gg",
-      "price": "5525",
-      "image": "images/img4.jpg"
-    },
-    {
-      "id": "13",
-      "title": "ddd",
-      "owner": "ddd",
-      "location": "dddd",
-      "price": "344",
-      "image": "images/img3.jpg"
-    },
-    {
       "id": "80",
-      "title": "aa",
-      "owner": "aa",
-      "location": "aa",
-      "price": "233",
+      "title": "5 Bedroom Duplex",
+      "location": "Wuse - Abuja",
+      "owner": "Ahmed Abubakar",
+      "price": "5000000",
       "image": "images/img17.jpg"
     },
     {
       "id": "78",
-      "title": "ddddd",
-      "owner": "ssddd",
-      "location": "sssss",
-      "price": "445555",
+      "title": "3 Bedroom Mansion",
+      "location": "Gwagwalada - Abuja",
+      "owner": "Idris Abdulahi",
+      "price": "4500000",
       "image": "images/img2.jpg"
+    },
+    {
+      "id": "5",
+      "title": "5 Bedrooms luxury Apartment",
+      "location": "Ikoyi - Lagos",
+      "owner": "Sir Andy Uba",
+      "price": "8000000",
+      "image": "images/img5.jpg"
     }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "rentals": [
+    {
+      "id": "93",
+      "user": "funpet@gmail.com",
+      "title": "6 Bedroom Flat",
+      "location": "Aggip - Rivers",
+      "duration": "1",
+      "annualPrice": "4800000",
+      "pricePaid": "4800000",
+      "owner": "Chinda",
+      "image": "images/img12.jpg",
+      "propertyId": "73"
+    },
+    {
+      "id": "82",
+      "user": "david@gmail.com",
+      "title": "5 Bedroom Duplex",
+      "location": "Wuse - Abuja",
+      "duration": "2",
+      "annualPrice": "5000000",
+      "pricePaid": "10000000",
+      "owner": "Ahmed Abubakar",
+      "image": "images/img17.jpg",
+      "propertyId": "80"
+    }
+  ]
 }
