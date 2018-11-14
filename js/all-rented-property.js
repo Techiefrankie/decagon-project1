@@ -19,14 +19,16 @@ $(document).ready(function () {
                         <td><span class="btn btn-success">Active</span> </td>
                         <input type="hidden" id="tenantEmail" value="${email}"/>
                         <td>
-                        <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
                             <a href="view-listing.html?id=${data[i].propertyId}">
-                                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-eye-open"> View Property</span> </button> 
+                                <button type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-eye-open"> View Property</span> </button> 
                             </a>
                         </div>
                         
                         <div class="col-md-6">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open" onclick="viewTenant();"> View Tenant</span> </button> 
+                            <button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open" onclick="viewTenant('${email}');"> View Tenant</span> </button> 
+                        </div>
                         </div>
                         
                         </td>
@@ -42,10 +44,7 @@ $(document).ready(function () {
     })
 });
 
-function viewTenant() {
-    let email = $('#tenantEmail').val();
-    alert(email)
-
+function viewTenant(email) {
     $.ajax({
         url: " http://localhost:3000/users?email="+email,
         success: function (data) {

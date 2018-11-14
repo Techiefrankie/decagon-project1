@@ -1,11 +1,30 @@
 body{
     /*#D0D7E3;*/
-    background-color: mistyrose;
+    background-color: #fbf8f8;
     font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+}
+.bg-header{
+    background-color: #9989EA;
+}
+.dash-header{
+    background-color: #ced2ff;
 }
 .list-img{
     width: 200px;
     height: 150px;
+}
+
+.brand{
+    color: #FAFAFC;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: large;
+    text-decoration: none;
+}
+.brand:hover{
+    text-decoration: none;
+    color: white;
 }
 .listing-pane{
     padding: 10px;
@@ -13,6 +32,7 @@ body{
     border-radius: 5px;
     width: 230px;
     min-height: 300px;
+    box-shadow: 10px 5px 5px #f7f4f4;
 }
 footer{
     margin-top: 10px;
@@ -24,8 +44,11 @@ footer{
 }
 
 .menu-item:hover{
-    background-color: dodgerblue;
+    background-color: #7b70b3;
     color: #ffffff;
+}
+.menu-item{
+    color: #FAFAFC;
 }
 
 #error{
@@ -35,12 +58,6 @@ footer{
 
 .img-title{
     margin-top: 5px;
-}
-.brand{
-    color: maroon;
-    font-family: "Bernard MT Condensed";
-    font-size: large;
-    text-decoration: none;
 }
 .add-section{
     background-color: #ffffff;
@@ -63,9 +80,10 @@ footer{
 .top-list{
     width: 200px;
     padding: 10px;
-    background-color: sienna;
-    color: white;
+    color: #D2D2D2;
     border-radius: 5px;
+    color: #807c7c;
+    font-weight: bold;
 }
 .bottom-margin{
     margin-bottom: 10px;
@@ -73,4 +91,23 @@ footer{
 .dashboard-header{
     color: blue;
 
+}
+.rent-text{
+    color: white;
+}
+.menu-btn{
+    background-color: white;
+    color: #000000;
+}
+.dash-brand{
+    /*color: maroon;*/
+    /*background-color: white;*/
+    /*padding: 10px;*/
+    /*border-radius: 2px;*/
+
+    color: blue;
+    font-weight: bold;
+}
+.dash-brand:hover{
+    text-decoration: none;
 }

@@ -16,7 +16,7 @@ $(document).ready(function () {
                         <td>${numeral(data[i].annualPrice).format('0,0')}</td>
                         <td>₦${numeral(data[i].pricePaid).format('0,0')}</td>
                         <td><span class="btn btn-success">Active</span> </td>
-                        <td><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-refresh"> Renew</span> </button> </td>
+                        <td><button type="button" class="btn btn-info" onclick="renew();"><span class="glyphicon glyphicon-refresh"> Renew</span> </button> </td>
                         </tr>
                     </tr>`;
                     $('.rentals').append(display);
@@ -29,3 +29,11 @@ $(document).ready(function () {
     })
 });
 
+function renew() {
+    swal({
+        title: "Success!",
+        text: "Rent successfully renewed!",
+        icon: "success",
+        button: "Ok!",
+    })
+}

@@ -18,8 +18,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 10px; font-size: large;">
-    <a class="brand" href="dashboard.html" style="text-decoration: none;">Online House Rental System</a>
+<nav class="navbar navbar-expand-lg dash-header" style="margin-bottom: 10px; font-size: large;">
+    <a class="dash-brand" href="dashboard.html" >DKG Propertyz</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,40 +28,38 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="dashboard.html" class="nav-link" >
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="mymodal">All Lists</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" type="button">All Lists</button>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="add-listing.html">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="mymodal">Add Listing</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" type="submit" data-toggle="modal" data-target="mymodal">Add Listing</button>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="view-rentals.html">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="mymodal">My Rentals</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" type="submit" data-toggle="modal" data-target="mymodal">My Rentals</button>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="view-all-rented-property.html">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="mymodal">All Rented Property</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" type="submit" data-toggle="modal" data-target="mymodal">All Rented Property</button>
                 </a>
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="mymodal">Search</button>&nbsp;
-            <button class="btn btn-outline-success my-2 my-sm-0" id="logout">Sign Out</button>
+            <input class="form-control mr-sm-2 menu-btn" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" type="submit" data-toggle="modal" data-target="mymodal">Search</button>&nbsp;
+            <button class="btn btn-outline-success my-2 my-sm-0 menu-btn" id="logout">Sign Out</button>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid">
-    <h1 class="dashboard-header">List of All Property Available for Rent</h1>
+<div class="container">
+
     <div class="row">
-
-        <div class="full-list">
-
-        </div>
+        <h1 class="dashboard-header">List of All Property Available for Rent</h1>
+        <div class="full-list"></div>
     </div>
 </div>
 <!--<footer>-->

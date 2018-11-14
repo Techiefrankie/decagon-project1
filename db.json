@@ -88,24 +88,16 @@
       "id": "73",
       "title": "6 Bedroom Flat",
       "location": "Aggip - Rivers",
-      "owner": "Chinda",
+      "owner": "Chinda Estate",
       "price": "4800000",
       "image": "images/img12.jpg"
     },
     {
-      "id": "69",
-      "title": "2 Bedroom Flat",
-      "owner": "Gomba",
-      "location": "Aleto - Eleme",
-      "price": "200000",
-      "image": "images/img2.jpg"
-    },
-    {
       "id": "77",
-      "title": "Self Contain",
-      "owner": "Baridule Martins",
+      "title": "3 Bedroom Flat",
       "location": "Woji - Rivers",
-      "price": "120000",
+      "owner": "Baridule Martins",
+      "price": "7200000",
       "image": "images/img7.jpg"
     },
     {
@@ -130,36 +122,21 @@
       "location": "Ikoyi - Lagos",
       "owner": "Sir Andy Uba",
       "price": "8000000",
-      "image": "images/img5.jpg"
+      "image": "images/img9.jpg"
+    },
+    {
+      "id": "56",
+      "title": "5 Bedroom Duplex ",
+      "owner": "Decagon Institute",
+      "location": "Ilupeju - Lagos",
+      "price": "8000000",
+      "image": "images/img15.jpg"
     }
   ],
   "profile": {
     "name": "typicode"
   },
   "rentals": [
-    {
-      "id": "93",
-      "user": "funpet@gmail.com",
-      "title": "6 Bedroom Flat",
-      "location": "Aggip - Rivers",
-      "duration": "1",
-      "annualPrice": "4800000",
-      "pricePaid": "4800000",
-      "owner": "Chinda",
-      "image": "images/img12.jpg",
-      "propertyId": "73"
-    },
-    {
-      "id": "82",
-      "user": "david@gmail.com",
-      "title": "5 Bedroom Duplex",
-      "location": "Wuse - Abuja",
-      "duration": "2",
-      "annualPrice": "5000000",
-      "pricePaid": "10000000",
-      "owner": "Ahmed Abubakar",
-      "image": "images/img17.jpg",
-      "propertyId": "80"
-    }
+    
   ]
 }

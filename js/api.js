@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     //list of property
     $.ajax({
         url: 'http://localhost:3000/houses',
@@ -11,13 +12,13 @@ $(document).ready(function () {
                 let price = data[i].price;
                 let img = data[i].image;
                 let display = `
-                    <div class='col-md-3' style="margin-bottom: 5px">
+                    <div class='col-md-3' style="margin-bottom: 5px; margin-bottom: 10px;">
                         <div class="listing-pane">
                             <img src="${img}" class="list-img">
                             <p>${title}</p>
                             <p><label>${location}</label></p>
                             <p><b>₦${numeral(price).format('0,0')}</b></p>
-                            <p><button type="button"  class="btn btn-warning" onclick="rentAlert();">Rent property</button> </p>
+                            <p><button type="button"  class="btn btn-warning rent-text" onclick="rentAlert();">Rent property</button> </p>
                         </div>
                     </div>
                 `;
@@ -31,7 +32,7 @@ $(document).ready(function () {
     $('#login').click(function () {
         let email = $('#email').val();
         let password = $('#password').val();
-        if ( email === ''  || password == ''){
+        if ( email === ''  || password === ''){
             document.getElementById("error").innerHTML = "Please enter username and password";
         }
         else if (!emailCheck(email)) {
@@ -118,20 +119,6 @@ $(document).ready(function () {
         }
     });
 
-    function getNextID() {
-        var count = 0;
-        $.ajax({
-           url: "http://localhost:3000/users",
-            success: function (data) {
-
-                for (let i = 0; i < data.length; i++){
-                    count++;
-                }
-                console.log(count);
-                return count;
-            }
-        });
-    }
 
     function hashCode(s) {
         for(var i = 0, h = 0; i < s.length; i++)
@@ -215,7 +202,7 @@ $(document).ready(function () {
                     let id = data[i].id;
                     let url = "view-listing.html?id="+id;
                     let rentUrl = "rent-property.html?id="+id;
-                    let display = "<div class='col-md-4' style='margin: 20px'><div class='each-list'><p class=''><img src='" + data[i].image +"' height='250px' width='300px' alt='image'/></p>" +
+                    let display = "<div class='col-md-3' style='margin: 25px'><div class='each-list'><p class=''><img src='" + data[i].image +"' height='250px' width='300px' alt='image'/></p>" +
                         " <p class=''><span style='color: green;'>" + data[i].title +
                         "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
                         "<span style='color: maroon;'>₦" + numeral(data[i].price).format('0,0') + "</span></p>" +
@@ -233,10 +220,14 @@ $(document).ready(function () {
         })
     });
     //full list ends here
+    $('#signup-form').hide();
 
 });
 
-
+function signUp() {
+    $('#signin-form').hide();
+    $('#signup-form').show();
+}
 function isValidEmail() {
     let email = $('#email').val();
     if (!emailCheck(email)){
