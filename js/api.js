@@ -194,24 +194,39 @@ $(document).ready(function () {
 
     //full list starts here
     $(function () {
+        //filter of rented property
+        let propertyIds = [];
+        $.ajax({
+            url: `http://localhost:3000/rentals`,
+            method: 'get',
+            success: function (data) {
+                for (let j = 0; j < data.length; j++){
+                    propertyIds.push(data[j].propertyId);
+                }
+            }
+        });
+        console.log(propertyIds);
         $.ajax({
             url: "http://localhost:3000/houses",
             method: "get",
             success: function (data) {
                 for (let i = 0; i < data.length; i++){
                     let id = data[i].id;
-                    let url = "view-listing.html?id="+id;
-                    let rentUrl = "rent-property.html?id="+id;
-                    let display = "<div class='col-md-3' style='margin: 25px'><div class='each-list'><p class=''><img src='" + data[i].image +"' height='250px' width='300px' alt='image'/></p>" +
-                        " <p class=''><span style='color: green;'>" + data[i].title +
-                        "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
-                        "<span style='color: maroon;'>₦" + numeral(data[i].price).format('0,0') + "</span></p>" +
-                        "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view Property</span></button> </a>" +
-                        "<a href='" + rentUrl + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-warning' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-book'> Rent Property</span></button> </a>"
+                    if (!propertyIds.includes(id)){
+                        let url = "view-listing.html?id="+id;
+                        let rentUrl = "rent-property.html?id="+id;
+                        let props = "<div class='col-md-3' style='margin: 25px'><div class='li'><p class=''><div class='each-list'> <img src='" + data[i].image +"' height='250px' width='300px' alt='image'/></p>" +
+                            " <p class=''><span style='color: green;'>" + data[i].title +
+                            "</span><span class='location'> - Location: <b> " + data[i].location + "</span></b> | " +
+                            "<span style='color: maroon;'>₦" + numeral(data[i].price).format('0,0') + "</span></p>" +
+                            "<a href='" + url + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-primary' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-eye-open'> view Property</span></button> </a>" +
+                            "<a href='" + rentUrl + "' style='text-decoration: none; color:#ffffff;'><button class='btn btn-warning' style='margin-bottom: 10px;' type='button'><span class='glyphicon glyphicon-book'> Rent Property</span></button> </a>"
                         "<br/></p>"+
-                        "</div>";
+                        "</div></div>";
                         "</div<br/><br/>";
-                    $('.full-list').append(display);
+                        $('#dash-list').append(props);
+                    }
+
                 }
             },
             error: function () {

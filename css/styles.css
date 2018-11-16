@@ -1,5 +1,5 @@
 body{
-    /*#D0D7E3;*/
+    /*#D0D7E3; #fbf8f8*/
     background-color: #fbf8f8;
     font-size: 15px;
     font-family: 'Nunito', sans-serif;
@@ -14,7 +14,9 @@ body{
     width: 200px;
     height: 150px;
 }
-
+.single-prop{
+    background-color: maroon;
+}
 .brand{
     color: #FAFAFC;
     font-family: 'Nunito', sans-serif;
@@ -68,7 +70,8 @@ footer{
     background-color: white;
     width: 350px;
     padding: 10px 0px 0px 25px;
-    margin-bottom: 10px;
+    margin: 10px;
+    box-shadow: 10px 5px 5px #f7f4f4;
 }
 .view-btn{
     text-decoration: none;
